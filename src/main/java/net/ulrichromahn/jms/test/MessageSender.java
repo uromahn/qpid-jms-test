@@ -113,7 +113,7 @@ public class MessageSender {
 			TextMessage msg;
 			try {
 				msg = session.createTextMessage(txtMsg);
-				msg.setStringProperty("source", "stdin");
+				//msg.setStringProperty("source", "stdin");
 				msgProducer.send(msg);
 			} catch (JMSException e) {
 				LOG.error("Error while creating or sending a text message: ", e);

@@ -86,8 +86,8 @@ public class MessageReader {
 	        conn = connectionFactory.createConnection();
 	        session = conn.createSession(false, Session.AUTO_ACKNOWLEDGE);
 	        Destination dest = (Destination) ctx.lookup(DEST_TYPE);
-	        msgConsumer = session.createConsumer(dest, "source='stdin'");
-	        //msgConsumer = session.createConsumer(dest);
+	        //msgConsumer = session.createConsumer(dest, "source='stdin'");
+	        msgConsumer = session.createConsumer(dest);
 		} catch (NamingException e) {
 			LOG.error("Can't lookup '" + MSG_BROKER + "':", e);
 		} catch (JMSException e) {
